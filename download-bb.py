@@ -5,11 +5,6 @@ import requests
 import tempfile
 
 
-# Not included in updatet-manifest
-
-# Aiport Extreme (original)
-# - 5.5.1 https://download.info.apple.com/Mac_OS_X/061-1581.20041220.PtBSE/AirPortExtremeFW5.5.1.basebinary.zip / https://support.apple.com/kb/DL521?locale=en_GB
-
 def download_from_manifest(path):
     xmlfile = os.path.join(tempfile.gettempdir(), 'version.xml')
     jsonfile = os.path.join(tempfile.gettempdir(), 'version.json')
@@ -48,3 +43,9 @@ os.system("7z x AirPort%204.1%20Update.dmg")
 os.system("gzcat AirPort\ 4.1\ Update/AirPortSW.pkg/Contents/Archive.pax.gz | pax -r")
 os.system("cp System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/APBinary3.dat basebinaries/102/5.5.basebinary")
 os.system("cp System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/APBinary4.dat basebinaries/102/6.1.basebinary")
+
+# Axtreme 5.5.1 https://support.apple.com/kb/DL521
+os.system("curl -L https://download.info.apple.com/Mac_OS_X/061-1581.20041220.PtBSE/AirPortExtremeFW5.5.1.basebinary.zip -o basebinaries/3/5.5.1.basebinary.zip")
+os.system("unzip basebinaries/3/5.5.1.basebinary.zip -d basebinaries/3")
+os.system("mv basebinaries/3/AirPortExtremeFW\ 5.5.1.basebinary basebinaries/3/5.5.1.basebinary")
+#os.system("rm basebinaries/3/*.zip")
