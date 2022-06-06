@@ -37,11 +37,11 @@ os.system("unzip basebinaries/102/6.1.1.basebinary.zip -d basebinaries/102")
 os.system("mv basebinaries/102/AirPortExpressFirmware6.1.1.basebinary basebinaries/102/6.1.1.basebinary")
 os.system("rm basebinaries/102/*.zip")
 
-# ae54g 6.1 / 5.5 (unencrypted)  https://support.apple.com/kb/DL536
+# ae54g 6.1 / ax 5.5  https://support.apple.com/kb/DL536
 os.system("curl -L https://download.info.apple.com/Mac_OS_X/061-1459.20041115.m41sw/AirPort%204.1%20Update.dmg -o AirPort%204.1%20Update.dmg")
 os.system("7z x AirPort%204.1%20Update.dmg")
 os.system("gzcat AirPort\ 4.1\ Update/AirPortSW.pkg/Contents/Archive.pax.gz | pax -r")
-os.system("cp System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/APBinary3.dat basebinaries/102/5.5.basebinary")
+os.system("cp System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/APBinary3.dat basebinaries/3/5.5.basebinary")
 os.system("cp System/Library/PrivateFrameworks/Apple80211.framework/Versions/A/Resources/APBinary4.dat basebinaries/102/6.1.basebinary")
 
 # Axtreme 5.5.1 https://support.apple.com/kb/DL521
